@@ -1,0 +1,51 @@
+.Tile {
+  background-color: #111;
+  color: white;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  aspect-ratio: 1/1;
+  font-size: 280%;
+  border: 3px solid rgb(40, 39, 39);
+}
+
+.correct {
+  background-color: #538d4e;
+}
+.wrong {
+  background-color: #3a3a3c;
+}
+.present {
+  background-color: #b59f3b;
+}
+.active {
+  border-color: grey;
+}
+
+.shake {
+  animation-name: shake;
+  animation-duration: 300ms;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-7%);
+  }
+  50% {
+    transform: translateX(7%);
+  }
+  80% {
+    transform: translateX(-3%);
+  }
+  90% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

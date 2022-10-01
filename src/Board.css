@@ -1,0 +1,12 @@
+.Board {
+  width: calc(0.7 * 600px);
+  height: calc(0.7 * 720px);
+  /* background-color: #333; */
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.3rem;
+  padding: 0.3rem;
+  flex-shrink: 1;
+}

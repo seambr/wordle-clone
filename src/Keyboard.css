@@ -1,0 +1,43 @@
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.4em;
+  width: 500px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-block-start: 50px;
+}
+
+.letter,
+.special {
+  grid-column: span 2;
+  text-transform: uppercase;
+  color: white;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.space {
+  grid-column: span 1;
+}
+.special {
+  grid-column: span 3;
+}
+.special:hover,
+.letter:hover {
+  filter: brightness(0.9);
+}
+.letter.correct {
+  background-color: #538d4e;
+}
+.letter.wrong {
+  background-color: #3a3a3c;
+}
+.letter.present {
+  background-color: #b59f3b;
+}
