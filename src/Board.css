@@ -10,3 +10,6 @@
   padding: 0.3rem;
   flex-shrink: 1;
 }
+.Board > * {
+  user-select: none;
+}

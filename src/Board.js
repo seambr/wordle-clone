@@ -73,7 +73,8 @@ function Board() {
         currentRow.current += 1
         currentCol.current = 0
       }
-      setBoard(board)
+      setBoard((old) => [...old])
+      console.log("HAHA")
       return
     }
     if (event.key === "Backspace") {

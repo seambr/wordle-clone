@@ -1,3 +1,6 @@
+.keyboard > * {
+  user-select: none;
+}
 .keyboard {
   display: grid;
   grid-template-columns: repeat(20, 1fr);
@@ -28,10 +31,7 @@
 .special {
   grid-column: span 3;
 }
-.special:hover,
-.letter:hover {
-  filter: brightness(0.9);
-}
+
 .letter.correct {
   background-color: #538d4e;
 }
@@ -40,4 +40,8 @@
 }
 .letter.present {
   background-color: #b59f3b;
+}
+.special:hover,
+.letter:hover {
+  filter: brightness(0.9);
 }

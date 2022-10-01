@@ -1,12 +1,12 @@
 import React, { useContext } from "react"
 import { BoardContext } from "./Board"
-
+import { BsBackspace } from "react-icons/bs"
 function Letter({ letter, handleKeyDown, word, status }) {
   const ctx = useContext(BoardContext)
   let state
 
   if (status.current[letter]) {
-    state = status.current[letter]
+    state = status.current[letter] || ""
   }
 
   return (
@@ -15,7 +15,7 @@ function Letter({ letter, handleKeyDown, word, status }) {
       className={`${
         letter !== "" ? (letter.length > 1 ? "special" : "letter") : "space"
       } ${state}`}>
-      {letter}
+      {(letter === "Backspace" && <BsBackspace />) || letter}
     </div>
   )
 }

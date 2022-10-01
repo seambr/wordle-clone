@@ -1,5 +1,6 @@
 import React from "react"
 import Letter from "./Letter"
+
 import "./Keyboard.css"
 const letters = [
   "q",
@@ -37,9 +38,9 @@ const letters = [
 function Keyboard({ handleKeyDown, usedLetters, word, status }) {
   return (
     <div className='keyboard'>
-      {letters.map((letter) => (
+      {letters.map((letter, i) => (
         <Letter
-          key={letter}
+          key={i}
           letter={letter}
           handleKeyDown={handleKeyDown}
           usedLetters={usedLetters}
