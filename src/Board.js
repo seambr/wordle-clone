@@ -23,6 +23,9 @@ function Board() {
   const currentRow = useRef(0)
   const currentCol = useRef(0)
   const status = useRef({})
+  const [displayAlert, setDisplayAlert] = useState({
+    bool: false
+  })
   function isValidGuess() {
     const guess = board[currentRow.current].join("")
     return words.includes(guess)
@@ -55,6 +58,7 @@ function Board() {
       if (currentCol.current > 4) {
         if (!isValidGuess()) {
           shakeTile()
+          setDisplayAlert({ bool: true, message: "Not a valid guess" })
           return
         }
         board[currentRow.current].forEach((e, i) => {
@@ -65,16 +69,16 @@ function Board() {
           }
         })
         if (isCorrect()) {
-          setTimeout(() => {
-            alert("YOU WIN")
-          }, 500)
+          setDisplayAlert({ bool: true, message: "You Win!" })
         }
 
         currentRow.current += 1
         currentCol.current = 0
+        if (currentRow.current > 5) {
+          setDisplayAlert({ bool: true, message: WOTD })
+        }
       }
       setBoard((old) => [...old])
-      console.log("HAHA")
       return
     }
     if (event.key === "Backspace") {
@@ -118,9 +122,27 @@ function Board() {
           />
         ))}
       </div>
+      {displayAlert.bool === true && (
+        <Alert
+          setDisplayAlert={setDisplayAlert}
+          message={displayAlert.message}
+        />
+      )}
       <Keyboard handleKeyDown={handleKeyDown} word={WOTD} status={status} />
     </BoardContext.Provider>
   )
+}
+
+function Alert({ setDisplayAlert, message, time }) {
+  useEffect(() => {
+    const c = setTimeout(() => {
+      setDisplayAlert({ bool: false })
+      console.log("waeaa")
+    }, time || 2000)
+    return () => clearTimeout(c)
+  }, [])
+
+  return <div className='alert'>{message}</div>
 }
 
 export default Board

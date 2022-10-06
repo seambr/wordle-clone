@@ -13,3 +13,17 @@
 .Board > * {
   user-select: none;
 }
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  position: absolute;
+  top: 5%;
+  font-weight: 500;
+  background-color: rgb(218, 218, 218);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.184);
+  width: auto;
+  color: black;
+}
