@@ -1,5 +1,7 @@
 * {
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  user-select: none;
 }
 #root {
   height: 100%;
@@ -17,5 +19,4 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
